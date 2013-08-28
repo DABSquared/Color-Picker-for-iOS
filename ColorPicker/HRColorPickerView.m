@@ -54,6 +54,10 @@
     style.colorMapSizeHeight = 20;
     style.brightnessLowerLimit = 0.4f;
     style.saturationUpperLimit = 0.95f;
+    style.textR = 84;
+    style.textG = 84;
+    style.textB = 84;
+
     return style;
 }
 
@@ -137,6 +141,8 @@
         _tileSize = style.colorMapTileSize;
         _brightnessLowerLimit = style.brightnessLowerLimit;
         _saturationUpperLimit = style.saturationUpperLimit;
+        
+        textColor = [UIColor colorWithRed:style.textR/255.0 green:style.textG/255.0 blue:style.textB/255.0 alpha:1.0];
         
         _brightnessCursor = [[HRBrightnessCursor alloc] initWithPoint:CGPointMake(_brightnessPickerFrame.origin.x, _brightnessPickerFrame.origin.y + _brightnessPickerFrame.size.height/2.0f)];
         
@@ -417,7 +423,8 @@
     //
     /////////////////////////////////////////////////////////////////////////////
     
-    [[UIColor darkGrayColor] set];
+    
+    [textColor set];
     
     float textHeight = 20.0f;
     float textCenter = CGRectGetMidY(_currentColorFrame) - 5.0f;

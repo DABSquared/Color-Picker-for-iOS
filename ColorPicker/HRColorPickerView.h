@@ -47,6 +47,10 @@ struct HRColorPickerStyle{
     int colorMapSizeHeight; // 同じく縦にいくつ並ぶか。デフォルトは20;
     float brightnessLowerLimit; // 明度の下限
     float saturationUpperLimit; // 彩度の上限
+    int textR;
+    int textG;
+    int textB;
+
 };
 
 typedef struct HRColorPickerStyle HRColorPickerStyle;
@@ -73,7 +77,8 @@ typedef struct HRColorPickerStyle HRColorPickerStyle;
     // 色情報
     HRRGBColor _defaultRgbColor;
     HRHSVColor _currentHsvColor;
-    
+    UIColor *textColor;
+
     // カラーマップ上のカーソルの位置
     CGPoint _colorCursorPosition;
     
